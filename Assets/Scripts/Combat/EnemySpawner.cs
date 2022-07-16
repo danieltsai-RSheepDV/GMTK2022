@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        SpawnWave();
         enemyRosters = new Vector4[] {  // # of triangles, squares, pentagons, and hexagons
             new Vector4(2, 0, 0, 0),
             new Vector4(3, 0, 1, 0),
@@ -31,12 +32,7 @@ public class EnemySpawner : MonoBehaviour
     // At a scaling interval, spawn a scaling number of random enemies
     void Update()
     {
-        if (counter * Time.deltaTime >= baseInterval)  // Interval to spawn enemies
-        {
-            SpawnWave();
-            counter = 0;
-        }
-        counter++;
+        
     }
 
     // Spawns a wave of enemies based on difficulty, according to the enemy roster of given difficulty

@@ -408,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   face: {fileID: 368471754}
   DirectionValues: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
 --- !u!54 &60514484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -555,6 +556,8 @@ GameObject:
   m_Component:
   - component: {fileID: 78173104}
   - component: {fileID: 78173105}
+  - component: {fileID: 78173106}
+  - component: {fileID: 78173107}
   m_Layer: 0
   m_Name: Down
   m_TagString: Untagged
@@ -603,6 +606,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &78173106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78173103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29949a2cbf01f241aa2faadc87c99b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: {fileID: 1892815104}
+  dir: {x: 0, y: -1}
+--- !u!50 &78173107
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78173103}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 3
 --- !u!1001 &90415516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,6 +662,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tags.Array.data[0]
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690952221296780667, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690952221296780667, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690952221296780667, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6069177320833446643, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
         type: 3}
@@ -757,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}
       propertyPath: difficulty
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269467270105735701, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}
@@ -767,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 6269467270105735701, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650e1234310cb1942a73fc527e6c6369, type: 3}
@@ -1472,6 +1525,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1380056483}
   - component: {fileID: 1380056484}
+  - component: {fileID: 1380056485}
+  - component: {fileID: 1380056486}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -1520,6 +1575,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1380056485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380056482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29949a2cbf01f241aa2faadc87c99b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: {fileID: 1892815104}
+  dir: {x: 0, y: 1}
+--- !u!50 &1380056486
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380056482}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 3
 --- !u!1 &1484909103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,6 +1941,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1749432825}
   - component: {fileID: 1749432826}
+  - component: {fileID: 1749432827}
+  - component: {fileID: 1749432828}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -1899,6 +1991,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &1749432827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749432824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29949a2cbf01f241aa2faadc87c99b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: {fileID: 1892815104}
+  dir: {x: 1, y: 0}
+--- !u!50 &1749432828
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749432824}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 3
 --- !u!1 &1837341548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,6 +2280,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8954996305046218870}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1892815104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8954996306399803764, guid: 5512f58f1b78d6f4883adfe3ca6f1c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 8954996305046218870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892815102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffdb5052e52ea0498f6d8a6517b4b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1914354435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2165,11 +2304,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1212888132}
-    - target: {fileID: 1105627890679600448, guid: f60e10830dac23648bfa4968622b0113,
-        type: 3}
-      propertyPath: currentType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1105627890679600450, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
       propertyPath: m_RootOrder
@@ -2356,6 +2490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1975367711}
   - component: {fileID: 1975367712}
+  - component: {fileID: 1975367713}
+  - component: {fileID: 1975367714}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -2404,6 +2540,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &1975367713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975367710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29949a2cbf01f241aa2faadc87c99b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: {fileID: 1892815104}
+  dir: {x: -1, y: 0}
+--- !u!50 &1975367714
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975367710}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 3
 --- !u!1001 &8954996305046218870
 PrefabInstance:
   m_ObjectHideFlags: 0

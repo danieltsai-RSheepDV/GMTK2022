@@ -11,7 +11,7 @@ public class Dice : MonoBehaviour
     public Vector3Int DirectionValues;
     private Vector3Int OpposingDirectionValues;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     readonly List<string> FaceRepresent = new() {"", "1", "2", "3", "4", "5", "6"};
     
@@ -38,7 +38,7 @@ public class Dice : MonoBehaviour
         }
     }
     
-    Vector3 getDirection(Vector3 relative)
+    public Vector3 getDirection(Vector3 relative)
     {
         if (Vector3.Dot(relative, transform.right) > 0.9f)
         {
@@ -74,7 +74,7 @@ public class Dice : MonoBehaviour
     public void launch(Vector2 direction, float power)
     {
         rb.AddForce(new Vector3(direction.x, 5, direction.y) * power, ForceMode.Impulse);
-        rb.AddTorque(Vector3.forward, ForceMode.Impulse);
+        rb.AddTorque((new Vector3(Random.value, Random.value,Random.value)).normalized * power, ForceMode.Impulse);
     }
 
     public void launch()

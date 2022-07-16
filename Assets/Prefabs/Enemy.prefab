@@ -480,6 +480,16 @@ PrefabInstance:
       propertyPath: tags.Array.data[0]
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2690952221296780667, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690952221296780667, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6069177320833446643, guid: cfa3de37f70a8644dbd1dc4708dfd4f0,
         type: 3}
       propertyPath: m_Name
