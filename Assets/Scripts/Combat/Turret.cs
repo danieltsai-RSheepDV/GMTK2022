@@ -31,6 +31,7 @@ public class Turret : MonoBehaviour
         if (lifetime > lifespan * 60)
         {
             Destroy(gameObject);
+            return;
         }
         if (upgraded)
         {

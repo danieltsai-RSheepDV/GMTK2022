@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         hexagon
     }
     [SerializeField] PlayerType currentType = PlayerType.triangle;
-    int cooldown = 0;
+    float cooldown = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +35,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.up = new Vector3(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y, 0);
-        transform.position += transform.up * moveSpeed;
+        transform.position += transform.up * moveSpeed * Time.deltaTime;
         if (cooldown > 0)
         {
-            cooldown--;
+            cooldown -= Time.deltaTime;
         } else
         {
             Attack();

@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2298767b83d5c34eb24ba16e535ba8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.06
+  moveSpeed: 1.5
   target: {fileID: 0}
   health: 3
   gun: {fileID: 1661735079394650153}
