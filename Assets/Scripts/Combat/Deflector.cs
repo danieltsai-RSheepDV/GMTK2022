@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Deflector : MonoBehaviour
 {
+    [SerializeField] private string checkTag;
+    
     [SerializeField] int frames = 3;
     [SerializeField] Gun gun;
     [SerializeField] Object bolt;
@@ -21,11 +23,14 @@ public class Deflector : MonoBehaviour
             Destroy(gameObject);
         counter++;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.collider.tag == "EnemyProjectile")
+        Debug.Log("test");
+        Projectile p = col.gameObject.GetComponent<Projectile>();
+        if (p && p.tags.Contains(checkTag))
         {
-            Destroy(collision.collider.gameObject);
+            Debug.Log("test2");
+            Destroy(col.gameObject);
             gun.Shoot(bolt);
         }
     }

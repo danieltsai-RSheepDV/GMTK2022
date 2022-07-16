@@ -104,11 +104,11 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");
-                Object.Instantiate(turret, transform.position, transform.rotation);
+                ((GameObject) Instantiate(turret, transform.position, transform.rotation)).SetActive(true);
                 break;
             case PlayerType.pentagon:
                 Debug.Log("genji shimada");
-                Object.Instantiate(deflector, transform.position + transform.up * 2, transform.rotation);
+                ((GameObject) Instantiate(deflector, transform.position, transform.rotation)).SetActive(true);
                 break;
             case PlayerType.hexagon:
                 if (dashCounter == 0)

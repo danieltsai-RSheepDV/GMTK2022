@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     {
         lifetime += Time.deltaTime;
         transform.position += transform.up * projectileSpeed * Time.deltaTime;
-        if (lifetime > lifespan * 60f)
+        if (lifetime > lifespan)
         {
             Destroy(gameObject);
         }

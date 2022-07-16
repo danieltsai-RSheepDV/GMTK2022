@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour
     int lifetime;
 
     [SerializeField] Gun gun;
-    [SerializeField] Object bolt;
+    [SerializeField] GameObject bolt;
     [SerializeField] int framesBetweenShots = 12;
     [SerializeField] bool upgraded = false;
     int cooldown;

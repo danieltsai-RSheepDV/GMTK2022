@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Enemy : MonoBehaviour
 {
@@ -51,11 +53,11 @@ public class Enemy : MonoBehaviour
                 cooldown = 60;
                 break;
             case PlayerType.square:
-                Object.Instantiate(turret, transform.position, transform.rotation);
+                ((GameObject) Instantiate(turret, transform.position, transform.rotation)).SetActive(true);
                 cooldown = 360;
                 break;
             case PlayerType.pentagon:
-                Object.Instantiate(deflector, transform.position + transform.up * 2, transform.rotation);
+                ((GameObject) Instantiate(deflector, transform.position, transform.rotation)).SetActive(true);
                 cooldown = 90;
                 break;
             case PlayerType.hexagon:
@@ -64,9 +66,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        Projectile p = collision.gameObject.GetComponent<Projectile>();
+        Projectile p = col.gameObject.GetComponent<Projectile>();
         if (p && p.tags.Contains("Player"))
         {
             health--;
