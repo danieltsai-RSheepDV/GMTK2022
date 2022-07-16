@@ -17,6 +17,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Object turret;
     [SerializeField] Object deflector;
 
+    int dashCounter = 0;  // positive while dashing, negative while recharging, zero when ready
+    [SerializeField] int dashCooldown = 60;
+    [SerializeField] int dashDuration = 60;
+    [Range(1f, 10f)]
+    [SerializeField] float dashSpeedBoost = 2f; 
+    bool invincible = false;
+    float dashSpeed;
+
     enum PlayerType {
         triangle,
         square,
@@ -24,6 +32,8 @@ public class PlayerController : MonoBehaviour
         hexagon
     }
     [SerializeField] PlayerType currentType = PlayerType.triangle;
+    [SerializeField] int maxHealth = 5;
+    int health;
 
 
     private Vector3 dir;
@@ -31,7 +41,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        dashSpeed = moveSpeed * dashSpeedBoost;
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -51,10 +63,28 @@ public class PlayerController : MonoBehaviour
         // Vector3 lookDirection = new Vector3(mousePos.x - transform.position.x, 0, mousePos.z - transform.position.z);
         // Debug.Log(lookDirection);
         // transform.forward = lookDirection;
+        if (dashCounter > 0)
+        {
+            dir = Vector3.zero;
+            transform.position += transform.up * dashSpeed * Time.deltaTime;
+            invincible = true;
+            dashCounter--;
+            if (dashCounter == 0)
+            {
+                invincible = false;
+                dashCounter = dashCooldown * -1;
+            }
+        } else if (dashCounter < 0)
+        {
+            dashCounter++;
+        }
+        
     }
 
     public void OnMove(InputValue inputValue)
     {
+        if (dashCounter != 0)
+            return;
         Vector2 inputVector = inputValue.Get<Vector2>();
         dir = new Vector3(inputVector.x, inputVector.y);
     }
@@ -81,9 +111,26 @@ public class PlayerController : MonoBehaviour
                 Object.Instantiate(deflector, transform.position + transform.up * 2, transform.rotation);
                 break;
             case PlayerType.hexagon:
-
+                if (dashCounter == 0)
+                    dashCounter = dashDuration;
                 break;
         }
         
+    }
+
+
+    // Call this to inflict damage
+    public void Hurt(GameObject effector)
+    {
+        if (invincible)
+        {
+            if (effector.tag == "Enemy")
+            {
+                // Hurt them
+            }
+        } else
+        {
+            // reroll character
+        }
     }
 }

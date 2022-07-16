@@ -1106,6 +1106,9 @@ MonoBehaviour:
   bolt: {fileID: 0}
   turret: {fileID: 0}
   deflector: {fileID: 0}
+  dashCooldown: 60
+  dashDuration: 60
+  dashSpeedBoost: 2
   currentType: 0
 --- !u!4 &957338578
 Transform:
@@ -1949,7 +1952,10 @@ MonoBehaviour:
   turret: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce, type: 3}
   deflector: {fileID: 4716101175098986623, guid: 92cfac2015f28494ca803dcdc303fa08,
     type: 3}
-  currentType: 2
+  dashCooldown: 60
+  dashDuration: 30
+  dashSpeedBoost: 4
+  currentType: 3
 --- !u!212 &1680428710
 SpriteRenderer:
   m_ObjectHideFlags: 0
