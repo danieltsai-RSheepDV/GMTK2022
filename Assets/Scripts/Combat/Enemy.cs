@@ -27,7 +27,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentType = (PlayerType) Mathf.RoundToInt(UnityEngine.Random.Range(0f, 3f));
+        target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
