@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
     [SerializeField] Gun gun;
     [SerializeField] Object bolt;
     [SerializeField] int framesBetweenShots = 12;
+    [SerializeField] bool upgraded = false;
     int cooldown;
     GameObject[] targets;
     GameObject activeTarget;
@@ -31,24 +32,21 @@ public class Turret : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        // Reacquire target every 60 frames
-        if (lifetime % 30 == 0)
-            GetTarget();
-        // Attack active target
-        if (activeTarget != null)
+        if (upgraded)
         {
-            transform.up = new Vector3(activeTarget.transform.position.x - transform.position.x, activeTarget.transform.position.y - transform.position.y, 0);
-            if (cooldown > 0)
+            // Reacquire target every 60 frames
+            if (lifetime % 30 == 0)
+                GetTarget();
+            // Attack active target
+            if (activeTarget != null)
             {
-                cooldown--;
+                transform.up = new Vector3(activeTarget.transform.position.x - transform.position.x, activeTarget.transform.position.y - transform.position.y, 0);
+                Shoot();
             }
-            else
-            {
-                gun.Shoot(bolt, transform.position, transform.rotation);
-                cooldown = framesBetweenShots;
-            }
+        } else
+        {
+            Shoot();
         }
-        
     }
 
     // sets target if one was found, rescans otherwise
@@ -65,5 +63,18 @@ public class Turret : MonoBehaviour
             }
         }
         targets = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    void Shoot()
+    {
+        if (cooldown > 0)
+        {
+            cooldown--;
+        }
+        else
+        {
+            gun.Shoot(bolt);
+            cooldown = framesBetweenShots;
+        }
     }
 }

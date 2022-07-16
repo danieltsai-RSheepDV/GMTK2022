@@ -1110,6 +1110,7 @@ MonoBehaviour:
   dashDuration: 60
   dashSpeedBoost: 2
   currentType: 0
+  maxHealth: 5
 --- !u!4 &957338578
 Transform:
   m_ObjectHideFlags: 0
@@ -1910,6 +1911,7 @@ GameObject:
   - component: {fileID: 1680428708}
   - component: {fileID: 1680428710}
   - component: {fileID: 1680428709}
+  - component: {fileID: 1680428711}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1953,9 +1955,10 @@ MonoBehaviour:
   deflector: {fileID: 4716101175098986623, guid: 92cfac2015f28494ca803dcdc303fa08,
     type: 3}
   dashCooldown: 60
-  dashDuration: 30
-  dashSpeedBoost: 4
-  currentType: 3
+  dashDuration: 20
+  dashSpeedBoost: 5
+  currentType: 1
+  maxHealth: 5
 --- !u!212 &1680428710
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2009,6 +2012,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1680428711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680428707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1719175287
 GameObject:
   m_ObjectHideFlags: 0
