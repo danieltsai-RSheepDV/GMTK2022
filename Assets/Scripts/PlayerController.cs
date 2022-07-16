@@ -26,9 +26,9 @@ public class PlayerController : MonoBehaviour
             // Debug.Log($"Mouse: {mousePos}");
         }
         
-        Vector2 lookDirection = new Vector3(mousePos.z - transform.position.z, mousePos.x - transform.position.x, 0);
+        Vector3 lookDirection = new Vector3(mousePos.x - transform.position.x, 0, mousePos.z - transform.position.z);
         Debug.Log(lookDirection);
-        transform.up = lookDirection;
+        transform.forward = lookDirection;
     }
 
     private void FixedUpdate()
