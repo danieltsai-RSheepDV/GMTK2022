@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentType = (PlayerType) Mathf.RoundToInt(UnityEngine.Random.Range(0f, 3f));
+        // currentType = (PlayerType) Mathf.RoundToInt(UnityEngine.Random.Range(0f, 3f));
         target = GameObject.Find("Player").transform;
     }
 
@@ -65,6 +65,12 @@ public class Enemy : MonoBehaviour
 
                 break;
         }
+    }
+
+    // Converts int to the enum: tri - 0, sq - 1, pen - 2, hex - 3
+    public void SetEnemyType(int type)
+    {
+        currentType = (PlayerType)type;
     }
 
     private void OnTriggerEnter2D(Collider2D col)

@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
         } else
         {
             // reroll character
+            currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
         }
     }
 }
