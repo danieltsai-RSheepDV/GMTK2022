@@ -110,9 +110,8 @@ MonoBehaviour:
   gun: {fileID: 1661735079394650153}
   bolt: {fileID: 6069177322025284160}
   turret: {fileID: 3016286729527158605}
-  deflector: {fileID: 4716101175098986623, guid: 92cfac2015f28494ca803dcdc303fa08,
-    type: 3}
-  currentType: 2
+  deflector: {fileID: 4716101174940070998}
+  currentType: 0
 --- !u!61 &1105627890679600463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,6 +335,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92cfac2015f28494ca803dcdc303fa08, type: 3}
+--- !u!1 &4716101174940070998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4716101175098986623, guid: 92cfac2015f28494ca803dcdc303fa08,
+    type: 3}
+  m_PrefabInstance: {fileID: 998843433}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4716101174940070999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4716101175098986622, guid: 92cfac2015f28494ca803dcdc303fa08,
@@ -349,6 +354,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105627890679600450}
     m_Modifications:
+    - target: {fileID: 2430623499987433814, guid: 91584560acd623e4793edf3f39eeebce,
+        type: 3}
+      propertyPath: tags.Array.data[0]
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2554480408246120208, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
       propertyPath: m_LocalPosition.x

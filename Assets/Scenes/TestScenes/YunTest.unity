@@ -1048,35 +1048,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1212888132}
     m_Modifications:
-    - target: {fileID: 2554480408246120208, guid: 91584560acd623e4793edf3f39eeebce,
+    - target: {fileID: 2554480408246120211, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2554480408246120208, guid: 91584560acd623e4793edf3f39eeebce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2554480408246120208, guid: 91584560acd623e4793edf3f39eeebce,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016286730867141948, guid: 91584560acd623e4793edf3f39eeebce,
-        type: 3}
-      propertyPath: bolt
+      propertyPath: parent
       value: 
-      objectReference: {fileID: 1863857997}
+      objectReference: {fileID: 1692487605}
     - target: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
       propertyPath: m_Name
       value: Turret
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3016286730867142339, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
@@ -1877,12 +1857,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8954996305046218870}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1908202079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4716101174940070998, guid: f60e10830dac23648bfa4968622b0113,
-    type: 3}
-  m_PrefabInstance: {fileID: 1914354435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1914354435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,24 +1866,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1105627890679600448, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1105627890679600448, guid: f60e10830dac23648bfa4968622b0113,
-        type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1212888132}
-    - target: {fileID: 1105627890679600448, guid: f60e10830dac23648bfa4968622b0113,
-        type: 3}
-      propertyPath: deflector
-      value: 
-      objectReference: {fileID: 1908202079}
-    - target: {fileID: 1105627890679600448, guid: f60e10830dac23648bfa4968622b0113,
-        type: 3}
-      propertyPath: currentType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1105627890679600450, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
       propertyPath: m_RootOrder
@@ -1971,6 +1930,11 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1661735079394650153, guid: f60e10830dac23648bfa4968622b0113,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1692487605}
+    - target: {fileID: 2554480409585641116, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
       propertyPath: parent
       value: 
