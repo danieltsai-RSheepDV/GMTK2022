@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7597070762981365899}
   - component: {fileID: 2690952221296780667}
   - component: {fileID: 2430623498264661325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,3 +100,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 1
   projectileDamage: 1
+  lifespan: 5

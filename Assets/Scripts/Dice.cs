@@ -77,8 +77,5 @@ public class Dice : MonoBehaviour
         rb.AddTorque(Vector3.forward, ForceMode.Impulse);
     }
 
-    void OnFire()
-    {
-        launch(new Vector2(1,1).normalized, 1);
-    }
+
 }

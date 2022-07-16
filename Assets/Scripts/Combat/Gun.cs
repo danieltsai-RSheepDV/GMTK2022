@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    
+    [SerializeField] Transform parentCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Gun : MonoBehaviour
     public void Shoot(Object ammo, Vector3 position, Quaternion rotation)
     {
         Debug.Log("Spawning");
-        Object.Instantiate(ammo, position, rotation);
+        Object.Instantiate(ammo, position, rotation, parentCam);
     }
 
 }

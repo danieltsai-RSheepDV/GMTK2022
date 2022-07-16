@@ -7,13 +7,23 @@ public class PlayerController : MonoBehaviour
 {
     [Range(0f, 30f)]
     [SerializeField] float moveSpeed = 1f;
-    [Range(1f, 100f)] 
+    [Range(1f, 100f)]
     [SerializeField] private float sensitivity = 1f;
     [SerializeField] Camera cam;
 
     [Header("Weapons")]
     [SerializeField] Gun gun;
     [SerializeField] Object bolt;
+    [SerializeField] Object turret;
+
+    enum PlayerType {
+        triangle,
+        square,
+        pentagon,
+        hexagon
+    }
+    [SerializeField] PlayerType currentType = PlayerType.triangle;
+
 
     private Vector3 dir;
 
@@ -55,7 +65,22 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire()
     {
-        Debug.Log("attempting p3");
-        gun.Shoot(bolt, transform.position, transform.rotation);
+        switch (currentType)
+        {
+            case PlayerType.triangle:
+                Debug.Log("attempting p3");
+                gun.Shoot(bolt, transform.position, transform.rotation);
+                break;
+            case PlayerType.square:
+                Debug.Log("im bad help turret");
+                Object.Instantiate(turret, transform.position, transform.rotation);
+                break;
+            case PlayerType.pentagon:
+                break;
+            case PlayerType.hexagon:
+
+                break;
+        }
+        
     }
 }
