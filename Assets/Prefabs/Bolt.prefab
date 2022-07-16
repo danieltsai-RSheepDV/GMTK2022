@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2574ff86ca5b6408591ddbac4aee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 1
+  projectileSpeed: 30
   projectileDamage: 1
   lifespan: 5
   tags: []

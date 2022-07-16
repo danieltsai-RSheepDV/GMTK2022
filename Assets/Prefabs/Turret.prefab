@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifespan: 12
   gun: {fileID: 2554480408246120211}
-  bolt: {fileID: 2430623498264661325, guid: cfa3de37f70a8644dbd1dc4708dfd4f0, type: 3}
-  framesBetweenShots: 12
+  bolt: {fileID: 6069177320833446643, guid: cfa3de37f70a8644dbd1dc4708dfd4f0, type: 3}
+  framesBetweenShots: 25
   upgraded: 0
 --- !u!61 &3740547166104429925
 BoxCollider2D:
