@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sensitivity = 1f;
     [SerializeField] Camera cam;
 
+    [Header("Weapons")]
+    [SerializeField] Gun gun;
+    [SerializeField] Object bolt;
+
     private Vector3 dir;
 
     // Start is called before the first frame update
@@ -47,5 +51,11 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputValue inputValue)
     {
         transform.Rotate(Vector3.forward, -inputValue.Get<Vector2>().x * Time.deltaTime * sensitivity);
+    }
+
+    public void OnFire()
+    {
+        Debug.Log("attempting p3");
+        gun.Shoot(bolt, transform.position, transform.rotation);
     }
 }
