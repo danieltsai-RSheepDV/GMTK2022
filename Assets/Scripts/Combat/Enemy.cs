@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         switch (currentType)
         {
             case PlayerType.triangle:
-                gun.Shoot(bolt, transform.position, transform.rotation);
+                gun.Shoot(bolt);
                 cooldown = 60;
                 break;
             case PlayerType.square:
@@ -66,11 +66,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collided");
-        if (collision.collider.tag == "PlayerProjectile")
+        Projectile p = collision.gameObject.GetComponent<Projectile>();
+        if (p && p.tags.Contains("Player"))
         {
             health--;
         }
+        
         if (health <= 0)
         {
             Destroy(gameObject);

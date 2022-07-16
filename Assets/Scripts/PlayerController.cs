@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerType.triangle:
                 Debug.Log("attempting p3");
-                gun.Shoot(bolt, transform.position, transform.rotation);
+                gun.Shoot(bolt);
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");

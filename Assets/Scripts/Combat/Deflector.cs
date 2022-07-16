@@ -26,7 +26,7 @@ public class Deflector : MonoBehaviour
         if (collision.collider.tag == "EnemyProjectile")
         {
             Destroy(collision.collider.gameObject);
-            gun.Shoot(bolt, transform.position, transform.rotation);
+            gun.Shoot(bolt);
         }
     }
 }

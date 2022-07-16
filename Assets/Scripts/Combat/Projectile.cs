@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] float projectileSpeed;
     [SerializeField] float projectileDamage;
     [SerializeField] int lifespan = 8;
-    int lifetime;
+    float lifetime;
+
+    public List<String> tags = new List<string>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +21,9 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lifetime++;
-        transform.position += transform.up * projectileSpeed;
-        if (lifetime > lifespan * 60)
+        lifetime += Time.deltaTime;
+        transform.position += transform.up * projectileSpeed * Time.deltaTime;
+        if (lifetime > lifespan * 60f)
         {
             Destroy(gameObject);
         }
@@ -30,6 +33,4 @@ public class Projectile : MonoBehaviour
     {
         
     }
-
-
 }
