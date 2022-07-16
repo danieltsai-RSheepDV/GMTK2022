@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Gun gun;
     [SerializeField] Object bolt;
     [SerializeField] Object turret;
+    [SerializeField] Object deflector;
 
     enum PlayerType {
         triangle,
@@ -76,6 +77,8 @@ public class PlayerController : MonoBehaviour
                 Object.Instantiate(turret, transform.position, transform.rotation);
                 break;
             case PlayerType.pentagon:
+                Debug.Log("genji shimada");
+                Object.Instantiate(deflector, transform.position + transform.up * 2, transform.rotation);
                 break;
             case PlayerType.hexagon:
 
