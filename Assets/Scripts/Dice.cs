@@ -71,11 +71,14 @@ public class Dice : MonoBehaviour
         }
     }
 
-    void launch(Vector2 direction, float power)
+    public void launch(Vector2 direction, float power)
     {
         rb.AddForce(new Vector3(direction.x, 5, direction.y) * power, ForceMode.Impulse);
         rb.AddTorque(Vector3.forward, ForceMode.Impulse);
     }
 
-
+    public void launch()
+    {
+        rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+    }
 }
