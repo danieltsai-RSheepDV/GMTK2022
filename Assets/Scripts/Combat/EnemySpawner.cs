@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] Object enemy;
+    [SerializeField] private GameObject endEnemy;
+    [SerializeField] private GameObject enemy;
     [Header("Settings")]
     [Range(0, 5)]
     [SerializeField] int difficulty = 1;
 
     [SerializeField] Vector4[] enemyRosters;
 
-    int enemiesToSpawn = 0;
-    int counter = 0;
-    int baseInterval = 5;  // In seconds
+    public int enemiesLeft = 0;
     
 
     void Start()
     {
-        SpawnWave();
         enemyRosters = new Vector4[] {  // # of triangles, squares, pentagons, and hexagons
             new Vector4(2, 0, 0, 0),
             new Vector4(3, 0, 1, 0),
@@ -27,6 +25,8 @@ public class EnemySpawner : MonoBehaviour
             new Vector4(0, 1, 0, 2),
             new Vector4(3, 3, 2, 1)
         };
+        
+        SpawnWave();
     }
 
     // At a scaling interval, spawn a scaling number of random enemies
@@ -49,6 +49,12 @@ public class EnemySpawner : MonoBehaviour
             
     }
 
+    public void SpawnWave(int diff)
+    {
+        difficulty = diff;
+        SpawnWave();
+    }
+
     // Spawns enemies in random locations in a 10x10 square around the center of the stage
     void SpawnEnemy(int type)
     {
@@ -59,5 +65,16 @@ public class EnemySpawner : MonoBehaviour
 
         GameObject mob = (GameObject)Instantiate(enemy, transform.position + offset, Quaternion.identity);
         mob.GetComponent<Enemy>().SetEnemyType(type);
+
+        enemiesLeft++;
+    }
+
+    public void DecrementEnemyCounter()
+    {
+        enemiesLeft--;
+        if (enemiesLeft == 0)
+        {
+            Instantiate(endEnemy, transform.position, Quaternion.identity);
+        }
     }
 }

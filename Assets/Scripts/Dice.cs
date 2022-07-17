@@ -1,23 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Dice : MonoBehaviour
 {
     public GameObject face;
     Vector3 lookForward;
     Vector3 lookUpward;
-    
-    public Vector3Int DirectionValues;
-    private Vector3Int OpposingDirectionValues;
 
-    public Rigidbody rb;
+    private bool inAir = false;
+    private Vector3 acceleration = Vector3.zero;
+    private Vector3 lastVelocity = Vector3.zero;
+
+    public Dictionary<Vector3, int> values = new()
+    {
+        {Vector3.up, 2},
+        {Vector3.down, 4},
+        {Vector3.forward, 6},
+        {Vector3.back, 5},
+        {Vector3.right, 1},
+        {Vector3.left, 3},
+    };
+
+    [NonSerialized] public Rigidbody rb;
 
     readonly List<string> FaceRepresent = new() {"", "1", "2", "3", "4", "5", "6"};
     
     void Start()
     {
-        OpposingDirectionValues = 7 * Vector3Int.one - DirectionValues;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -25,6 +37,17 @@ public class Dice : MonoBehaviour
     {
         if (transform.hasChanged)
         {
+            if (inAir)
+            {
+                acceleration = (rb.velocity - lastVelocity) / Time.fixedDeltaTime;
+                lastVelocity = rb.velocity;
+                if (acceleration.magnitude < 0.1f)
+                {
+                    inAir = false;
+                    GameManager.nextWave(values[getDirection(Vector3.up)]);
+                }
+            }
+            
             lookUpward = getDirection(Vector3.up);
             
             face.transform.localPosition = 2.0001f * lookUpward;
@@ -42,7 +65,6 @@ public class Dice : MonoBehaviour
     {
         if (Vector3.Dot(relative, transform.right) > 0.9f)
         {
-            Debug.Log(relative);
             return Vector3.right;
         }
         else if (Vector3.Dot(relative, -transform.right) > 0.9f)
@@ -75,6 +97,8 @@ public class Dice : MonoBehaviour
     {
         rb.AddForce(new Vector3(direction.x, 5, direction.y) * power, ForceMode.Impulse);
         rb.AddTorque((new Vector3(Random.value, Random.value,Random.value)).normalized * power, ForceMode.Impulse);
+
+        inAir = true;
     }
 
     public void launch()

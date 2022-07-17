@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 30f)]
     [SerializeField] float moveSpeed = 1f;
     [Range(1f, 100f)]
-    [SerializeField] private float sensitivity = 1f;
+    [SerializeField] private float sensitivity = 60f;
 
     [Header("Mouse Tracking")]
     [SerializeField] Camera cam;
@@ -57,21 +57,21 @@ public class PlayerController : MonoBehaviour
     {
         transform.position += dir * moveSpeed * Time.deltaTime;
 
-        // Mouse tracing
-        // Get Mouse coordinates in 3D scene
-        Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
-        Vector3 mousePos = new Vector3();
-        if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        {
-            mousePos = raycastHit.point;
-        }
-        // Translate to 2D coordinates
-        float scaleFactor = orthoCam.orthographicSize * 2 / quad.bounds.size.x;  // Find the ratio between 2D and 3D space (Orthographic size is half length of the window border so *2)
-        Vector3 diff = (mousePos - centerOfView.position) * scaleFactor;  // Multiply by scale factor to rescale the offset to the 2D space
-        Vector2 localOffset = new Vector2(localCenter.position.x + diff.x, localCenter.position.y + diff.z);  // Calculate relative mouse position with respect to 2D stage center
-        Vector2 lookDir = new Vector2(localOffset.x - transform.position.x, localOffset.y - transform.position.y);  // Get final direction vector
-        // Set orientation of player
-        transform.up = lookDir;
+        // // Mouse tracing
+        // // Get Mouse coordinates in 3D scene
+        // Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
+        // Vector3 mousePos = new Vector3();
+        // if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        // {
+        //     mousePos = raycastHit.point;
+        // }
+        // // Translate to 2D coordinates
+        // float scaleFactor = orthoCam.orthographicSize * 2 / quad.bounds.size.x;  // Find the ratio between 2D and 3D space (Orthographic size is half length of the window border so *2)
+        // Vector3 diff = (mousePos - centerOfView.position) * scaleFactor;  // Multiply by scale factor to rescale the offset to the 2D space
+        // Vector2 localOffset = new Vector2(localCenter.position.x + diff.x, localCenter.position.y + diff.z);  // Calculate relative mouse position with respect to 2D stage center
+        // Vector2 lookDir = new Vector2(localOffset.x - transform.position.x, localOffset.y - transform.position.y);  // Get final direction vector
+        // // Set orientation of player
+        // transform.up = lookDir;
 
         if (dashCounter > 0)
         {
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     
     public void OnLook(InputValue inputValue)
     {
-        // transform.Rotate(Vector3.forward, -inputValue.Get<Vector2>().x * Time.deltaTime * sensitivity);
+        transform.Rotate(Vector3.forward, -inputValue.Get<Vector2>().x * Time.deltaTime * sensitivity);
     }
 
     public void OnFire()
