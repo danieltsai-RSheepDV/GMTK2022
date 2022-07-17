@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static Dice die;
     [SerializeField] private EnemySpawner EnemySpawner;
     public static EnemySpawner enemySpawner;
+    [SerializeField] private GameObject TwoD;
+    public static GameObject twoD;
     
     static private FMOD.Studio.EventInstance instance;
     public FMODUnity.EventReference fmodEvent;

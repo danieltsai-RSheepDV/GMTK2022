@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float projectileSpeed;
-    [SerializeField] float projectileDamage;
-    [SerializeField] int lifespan = 8;
-    float lifetime;
+    [SerializeField] protected float projectileSpeed;
+    [SerializeField] protected float projectileDamage;
+    [SerializeField] protected int lifespan = 8;
+    protected float lifetime;
 
     public List<String> tags = new List<string>();
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         lifetime = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         lifetime += Time.deltaTime;
         transform.position += transform.up * projectileSpeed * Time.deltaTime;

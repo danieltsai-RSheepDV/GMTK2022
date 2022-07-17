@@ -24,7 +24,30 @@ public class EndEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         Projectile p = col.gameObject.GetComponent<Projectile>();
-        if (p && p.tags.Contains("Player"))
+        if ((p && p.tags.Contains("Player")))
+        {
+            try
+            {
+                Destroy(p.gameObject);
+            }
+            catch (Exception e) { }
+
+            health--;
+            vfx.PlayAccumulate(5 - health);
+            if (health <= 0)
+            {
+                vfx.PlayBurst();
+                GameManager.dieFace.SetActive(false);
+                GameManager.die.launch(col.transform.up, 5f);
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        PlayerController pl = col.gameObject.GetComponent<PlayerController>();
+        if (pl)
         {
             health--;
             vfx.PlayAccumulate(5 - health);

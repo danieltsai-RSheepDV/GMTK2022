@@ -8,7 +8,7 @@ public class Deflector : MonoBehaviour
     
     [SerializeField] int frames = 3;
     [SerializeField] Gun gun;
-    [SerializeField] Object bolt;
+    [SerializeField] GameObject chaser;
     int counter = 0;
     // Start is called before the first frame update
     void Start()
@@ -29,9 +29,10 @@ public class Deflector : MonoBehaviour
         Projectile p = col.gameObject.GetComponent<Projectile>();
         if (p && p.tags.Contains(checkTag))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Pentagon Successful Deflect");
             Debug.Log("test2");
             Destroy(col.gameObject);
-            gun.Shoot(bolt);
+            gun.Shoot(chaser);
         }
     }
 }

@@ -51,18 +51,18 @@ public class Enemy : MonoBehaviour
         {
             case PlayerType.triangle:
                 gun.Shoot(bolt);
-                cooldown = 60;
+                cooldown = 1;
                 break;
             case PlayerType.square:
                 ((GameObject) Instantiate(turret, transform.position, transform.rotation)).SetActive(true);
-                cooldown = 360;
+                cooldown = 6;
                 break;
             case PlayerType.pentagon:
                 ((GameObject) Instantiate(deflector, transform.position, transform.rotation)).SetActive(true);
-                cooldown = 90;
+                cooldown = 1.5f;
                 break;
             case PlayerType.hexagon:
-
+                
                 break;
         }
     }
@@ -79,15 +79,24 @@ public class Enemy : MonoBehaviour
         
         if (p && p.tags.Contains("Player"))
         {
+            Destroy(p.gameObject);
             Damage();
         }
-        
-
     }
 
     public void Damage()
     {
         health--;
+        if (health <= 0)
+        {
+            GameManager.enemySpawner.DecrementEnemyCounter();
+            Destroy(gameObject);
+        }
+    }
+    
+    public void Damage(int i)
+    {
+        health-=i;
         if (health <= 0)
         {
             GameManager.enemySpawner.DecrementEnemyCounter();

@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class Dice : MonoBehaviour
 {
+    [SerializeField] private GameObject model;
+    [SerializeField] private GameObject particles;
+    
     public GameObject face;
     Vector3 lookForward;
     Vector3 lookUpward;
@@ -104,5 +107,11 @@ public class Dice : MonoBehaviour
     public void launch()
     {
         rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+    }
+
+    public void shatter()
+    {
+        model.SetActive(false);
+        particles.SetActive(true);
     }
 }

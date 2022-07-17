@@ -26,20 +26,17 @@ public class SpriteShape : MonoBehaviour
 
     private void UpdateVerticies()
     {
-        float numVerts = Mathf.Round(currentShape * 5f) / 5f;
-        
         Spline spline = spriteShape.spline;
         spline.Clear();
         
-        float angleI = (2f * Mathf.PI)/numVerts;
-        for (int i = 0; i < numVerts; i++)
+        float offsetAngle = -0.25f * Mathf.Sin((currentShape - 0.5f) * Mathf.PI) + 0.25f;
+        float angleI = (2f * Mathf.PI)/currentShape;
+        for (int i = 0; i < currentShape; i++)
         {
-            float angle = angleI * i;
+            float angle = angleI * i + offsetAngle;
             Vector3 offset = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0);
             spline.InsertPointAt(i, offset * 5);
         }
-
-        transform.up = new Vector2(Mathf.Sin(angleI) * -1f, Mathf.Cos(angleI));
 
         spriteShape.RefreshSpriteShape();
     }

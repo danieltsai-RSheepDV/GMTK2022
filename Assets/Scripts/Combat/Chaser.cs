@@ -3,21 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chaser : MonoBehaviour
+public class Chaser : Projectile
 {
-    [SerializeField] float projectileSpeed = 20;
-    [SerializeField] float projectileDamage = 1;
-    [SerializeField] int lifespan = 8;
     float lifetime;
     GameObject[] targets;
     GameObject activeTarget;
 
-    public List<String> tags = new List<string>();
-
     // Start is called before the first frame update
-    void Start()
+    protected new void Start()
     {
-        lifetime = 0;
+        base.Start();
+        
         targets = GameObject.FindGameObjectsWithTag("Enemy");
         try
         {
@@ -29,7 +25,7 @@ public class Chaser : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected new void Update()
     {
         lifetime += Time.deltaTime;
         GetTarget();

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,8 +24,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject bolt;
     [SerializeField] GameObject chaser;
     [SerializeField] GameObject turret;
-    private Stack<GameObject> turrets = new Stack<GameObject>();
+    private List<GameObject> turrets = new List<GameObject>();
     [SerializeField] GameObject deflector;
+
+    [SerializeField] private SpriteShape spriteShape;
 
     int dashCounter = 0;  // positive while dashing, negative while recharging, zero when ready
     [SerializeField] int dashCooldown = 60;
@@ -57,23 +61,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log((int) currentType);
+        spriteShape.currentShape = Mathf.Lerp(spriteShape.currentShape, (int) currentType + 3, Time.deltaTime * 3f);
+        
         transform.position += dir * moveSpeed * Time.deltaTime;
-
-        // // Mouse tracing
-        // // Get Mouse coordinates in 3D scene
-        // Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
-        // Vector3 mousePos = new Vector3();
-        // if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        // {
-        //     mousePos = raycastHit.point;
-        // }
-        // // Translate to 2D coordinates
-        // float scaleFactor = orthoCam.orthographicSize * 2 / quad.bounds.size.x;  // Find the ratio between 2D and 3D space (Orthographic size is half length of the window border so *2)
-        // Vector3 diff = (mousePos - centerOfView.position) * scaleFactor;  // Multiply by scale factor to rescale the offset to the 2D space
-        // Vector2 localOffset = new Vector2(localCenter.position.x + diff.x, localCenter.position.y + diff.z);  // Calculate relative mouse position with respect to 2D stage center
-        // Vector2 lookDir = new Vector2(localOffset.x - transform.position.x, localOffset.y - transform.position.y);  // Get final direction vector
-        // // Set orientation of player
-        // transform.up = lookDir;
 
         if (dashCounter > 0)
         {
@@ -113,16 +104,17 @@ public class PlayerController : MonoBehaviour
             case PlayerType.triangle:
                 Debug.Log("attempting p3");
                 gun.Shoot(bolt);
-                gun.Shoot(chaser);
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");
+                turrets.RemoveAll(item => item == null);
                 GameObject nTurret = Instantiate(turret, transform.position, transform.rotation);
                 nTurret.SetActive(true);
-                turrets.Push(nTurret);
+                turrets.Add(nTurret);
                 if (turrets.Count > 2)
                 {
-                    Destroy(turrets.Pop());
+                    Destroy(turrets[0]);
+                    turrets.RemoveAt(0);
                 }
                 break;
             case PlayerType.pentagon:
@@ -141,19 +133,48 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
+        Projectile p = col.gameObject.GetComponent<Projectile>();
+        
         if (invincible)
         {
-            Enemy e = col.gameObject.GetComponent<Enemy>();
+            
+        } 
+        
+        else if((p && p.tags.Contains("Enemy")))
+        {
+            health--;
+            currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
+
+            if (health < 1)
+            {
+                GameManager.die.shatter();
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        Enemy e = col.gameObject.GetComponent<Enemy>();
+        
+        if (invincible)
+        {
             if (e)
             {
                 e.Damage();
             }
-        } else
+        } 
+        
+        else if(e)
         {
-            // reroll character
+            health--;
             currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
+
+            if (health < 1)
+            {
+                GameManager.die.shatter();
+            }
         }
     }
 }
