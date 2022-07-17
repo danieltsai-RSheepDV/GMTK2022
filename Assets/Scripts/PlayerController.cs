@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform centerOfView;
     [SerializeField] Transform localCenter;
     [SerializeField] MeshRenderer quad;
+    [SerializeField] SpriteRenderer orthoArea;
 
     [Header("Weapons")]
     [SerializeField] Gun gun;
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log($"Mouse: {mousePos}");
         }
 
-        float scaleFactor = 21 / quad.bounds.size.x;
+        float scaleFactor = orthoArea.bounds.size.x / quad.bounds.size.x;
         Vector3 diff = (mousePos - centerOfView.position) * scaleFactor;
         Debug.Log(quad.bounds.size);
         Vector2 localOffset = new Vector2(localCenter.position.x + diff.x, localCenter.position.y + diff.z);
