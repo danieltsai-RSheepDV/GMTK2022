@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{d9f37ec0-762b-4f01-a045-546515276109}">
+		<property name="assetPath">
+			<value>Triangle_Tri_Shot.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0187755102040816</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7d95a572-b349-4b46-8658-6fdc3d4f2292}</destination>
+		</relationship>
+	</object>
+</objects>

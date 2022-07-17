@@ -76,16 +76,22 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         Projectile p = col.gameObject.GetComponent<Projectile>();
+        
         if (p && p.tags.Contains("Player"))
         {
-            health--;
+            Damage();
         }
         
+
+    }
+
+    public void Damage()
+    {
+        health--;
         if (health <= 0)
         {
             GameManager.enemySpawner.DecrementEnemyCounter();
             Destroy(gameObject);
         }
-
     }
 }

@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Weapons")]
     [SerializeField] Gun gun;
-    [SerializeField] Object bolt;
-    [SerializeField] Object chaser;
-    [SerializeField] Object turret;
-    [SerializeField] Object deflector;
+    [SerializeField] GameObject bolt;
+    [SerializeField] GameObject chaser;
+    [SerializeField] GameObject turret;
+    private Stack<GameObject> turrets = new Stack<GameObject>();
+    [SerializeField] GameObject deflector;
 
     int dashCounter = 0;  // positive while dashing, negative while recharging, zero when ready
     [SerializeField] int dashCooldown = 60;
@@ -116,7 +117,13 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");
-                ((GameObject) Instantiate(turret, transform.position, transform.rotation)).SetActive(true);
+                GameObject nTurret = Instantiate(turret, transform.position, transform.rotation);
+                nTurret.SetActive(true);
+                turrets.Push(nTurret);
+                if (turrets.Count > 2)
+                {
+                    Destroy(turrets.Pop());
+                }
                 break;
             case PlayerType.pentagon:
                 Debug.Log("genji shimada");
@@ -124,21 +131,24 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerType.hexagon:
                 if (dashCounter == 0)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Charge");
                     dashCounter = dashDuration;
+                }
+
                 break;
         }
         
     }
 
-
-    // Call this to inflict damage
-    public void Hurt(GameObject effector)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (invincible)
         {
-            if (effector.tag == "Enemy")
+            Enemy e = col.gameObject.GetComponent<Enemy>();
+            if (e)
             {
-                // Hurt them
+                e.Damage();
             }
         } else
         {

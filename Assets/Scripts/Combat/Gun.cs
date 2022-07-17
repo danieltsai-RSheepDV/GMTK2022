@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     // Fires given ammo and position
     public void Shoot(Object ammo)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Triangle Basic Shot");
         Debug.Log("Spawning");
         GameObject shot = ((GameObject) Instantiate(ammo, transform));
         shot.transform.SetParent(parent);

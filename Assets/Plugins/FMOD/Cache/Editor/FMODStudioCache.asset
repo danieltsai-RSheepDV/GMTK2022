@@ -1,5 +1,157 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8669910055532227576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Charge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Charge
+  Guid:
+    Data1: 395436899
+    Data2: 1131839089
+    Data3: -1261095785
+    Data4: 732001830
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1541
+--- !u!114 &-7705770486707086198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637935968617772271
+  FileSizes:
+  - Name: Desktop
+    Value: 1472576
+  Exists: 1
+--- !u!114 &-7496545782568976044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ability Recharging
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ability Recharging
+  Guid:
+    Data1: 2031456509
+    Data2: 1100100331
+    Data3: 1931515059
+    Data4: -1466846658
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1985
+--- !u!114 &-3038947574754576186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Triangle Basic Shot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Triangle Basic Shot
+  Guid:
+    Data1: 1173539259
+    Data2: 1233449733
+    Data3: 376507030
+    Data4: -35932791
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
+--- !u!114 &-1611960017170630388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MX/Face
+  m_EditorClassIdentifier: 
+  Name: Face
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1190288583
+    data2: 312050833
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1071810741425137286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Super Charge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Super Charge
+  Guid:
+    Data1: -1175221959
+    Data2: 1198876419
+    Data3: -872757094
+    Data4: 250654697
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1567
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +164,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 1045178829685490373}
+  - {fileID: -7705770486707086198}
+  EditorEvents:
+  - {fileID: 674750474976878557}
+  - {fileID: 6513213313831230164}
+  - {fileID: -1071810741425137286}
+  - {fileID: -8669910055532227576}
+  - {fileID: 5580141733799490479}
+  - {fileID: 7433718477273082507}
+  - {fileID: -3038947574754576186}
+  - {fileID: -7496545782568976044}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: -7705770486707086198}
+  StringsBanks:
+  - {fileID: 1045178829685490373}
+  cacheTime: 637935968617792268
   cacheVersion: 131591
+--- !u!114 &674750474976878557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pentagon Successful Super Deflect
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pentagon Successful Super Deflect
+  Guid:
+    Data1: 1427591939
+    Data2: 1143953759
+    Data3: -1267636570
+    Data4: -954954718
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3030
+--- !u!114 &1045178829685490373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637935968617792268
+  FileSizes:
+  - Name: Desktop
+    Value: 1170
+  Exists: 1
+--- !u!114 &5580141733799490479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pentagon Successful Deflect
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pentagon Successful Deflect
+  Guid:
+    Data1: -1245986428
+    Data2: 1085722096
+    Data3: -490142276
+    Data4: 765313163
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 757
+--- !u!114 &6513213313831230164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Triangle Tri Shot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Triangle Tri Shot
+  Guid:
+    Data1: 1363015942
+    Data2: 1310565657
+    Data3: -19081062
+    Data4: 1380734608
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1018
+--- !u!114 &7433718477273082507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MX
+  m_EditorClassIdentifier: 
+  Path: event:/MX
+  Guid:
+    Data1: 369811620
+    Data2: 1134270214
+    Data3: -349192042
+    Data4: 1130592549
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1611960017170630388}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 170666

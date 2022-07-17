@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{b6abb3b9-f939-442a-9da9-977bce7347ba}">
+		<property name="assetPath">
+			<value>Pentagon_Successful_Deflect.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.75755102040816324</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7d95a572-b349-4b46-8658-6fdc3d4f2292}</destination>
+		</relationship>
+	</object>
+</objects>
