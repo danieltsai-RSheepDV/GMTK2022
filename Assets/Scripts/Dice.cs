@@ -15,6 +15,7 @@ public class Dice : MonoBehaviour
     Vector3 lookUpward;
 
     private bool inAir = false;
+    private bool falling = false;
     private Vector3 acceleration = Vector3.zero;
     private Vector3 lastVelocity = Vector3.zero;
 
@@ -45,10 +46,21 @@ public class Dice : MonoBehaviour
             {
                 acceleration = (rb.velocity - lastVelocity) / Time.fixedDeltaTime;
                 lastVelocity = rb.velocity;
-                if (acceleration.magnitude < 0.1f)
+                if (acceleration.magnitude < 0.05f)
                 {
                     inAir = false;
                     GameManager.nextWave(values[getDirection(Vector3.up)]);
+                }
+            }
+            
+            if (falling)
+            {
+                acceleration = (rb.velocity - lastVelocity) / Time.fixedDeltaTime;
+                lastVelocity = rb.velocity;
+                if (acceleration.magnitude < 0.05f)
+                {
+                    inAir = false;
+                    GameManager.tutorial();
                 }
             }
             
@@ -108,6 +120,9 @@ public class Dice : MonoBehaviour
     public void launch()
     {
         rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+        Cursor.lockState = CursorLockMode.Locked;
+        
+        falling = true;
     }
 
     public void shatter()

@@ -31,9 +31,16 @@ public class GameManager : MonoBehaviour
 
     public static void nextWave(int i)
     {
-        // enemySpawner.SpawnWave(i);
+        enemySpawner.SpawnWave(i);
         dieFace.SetActive(true);
         instance.setParameterByName("Face", i - 1);
+        twoD.SetActive(true);
+    }
+    
+    public static void tutorial()
+    {
+        dieFace.SetActive(true);
+        instance.setParameterByName("Face", 0);
         twoD.SetActive(true);
     }
 
