@@ -17,16 +17,16 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        enemyRosters = new Vector4[] {  // # of triangles, squares, pentagons, and hexagons
-            new Vector4(2, 0, 0, 0),
-            new Vector4(3, 0, 1, 0),
-            new Vector4(3, 0, 2, 1),
-            new Vector4(4, 0, 4, 0),
-            new Vector4(0, 1, 0, 2),
-            new Vector4(3, 3, 2, 1)
-        };
+        //enemyRosters = new Vector4[] {  // # of triangles, squares, pentagons, and hexagons
+        //    new Vector4(2, 0, 0, 0),
+        //    new Vector4(3, 0, 1, 0),
+        //    new Vector4(3, 0, 2, 1),
+        //    new Vector4(4, 0, 4, 0),
+        //    new Vector4(0, 1, 0, 2),
+        //    new Vector4(3, 3, 2, 1)
+        //};
         
-        SpawnWave();
+        // SpawnWave();
     }
 
     // At a scaling interval, spawn a scaling number of random enemies

@@ -5995,7 +5995,7 @@ MonoBehaviour:
   DieFace: {fileID: 1647289218}
   Die: {fileID: 770231533}
   EnemySpawner: {fileID: 2095534134}
-  TwoD: {fileID: 0}
+  TwoD: {fileID: 648967951}
   fmodEvent:
     Guid:
       Data1: 369811620
@@ -6642,23 +6642,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0cb3eb93decc1645bcf50cfe4edb38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 6
   sensitivity: 60
-  cam: {fileID: 1005060245}
-  centerOfView: {fileID: 770231536}
-  localCenter: {fileID: 1175335804}
-  quad: {fileID: 1647289219}
-  orthoCam: {fileID: 1175335806}
   gun: {fileID: 1395089993}
   bolt: {fileID: 1834104887}
   chaser: {fileID: 1886270331}
   turret: {fileID: 1814444832}
   deflector: {fileID: 728935326}
   spriteShape: {fileID: 648081688}
-  dashCooldown: 60
-  dashDuration: 120
-  dashSpeedBoost: 2
-  currentType: 2
+  dashCooldown: 20
+  dashDuration: 40
+  dashSpeedBoost: 5
+  currentType: 3
   maxHealth: 5
 --- !u!1 &1175335803
 GameObject:
@@ -8213,6 +8208,36 @@ PrefabInstance:
         type: 3}
       propertyPath: difficulty
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[0].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[0].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[1].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[1].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[3].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+        type: 3}
+      propertyPath: enemyRosters.Array.data[3].z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6269467270105735701, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}

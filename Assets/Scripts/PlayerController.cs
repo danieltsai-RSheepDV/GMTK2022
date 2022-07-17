@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class PlayerController : MonoBehaviour
 {
     [Range(0f, 30f)]
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 6f;
     [Range(1f, 100f)]
     [SerializeField] private float sensitivity = 60f;
 
@@ -23,10 +23,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteShape spriteShape;
 
     int dashCounter = 0;  // positive while dashing, negative while recharging, zero when ready
-    [SerializeField] int dashCooldown = 60;
-    [SerializeField] int dashDuration = 60;
+    [SerializeField] int dashCooldown = 20;
+    [SerializeField] int dashDuration = 40;
     [Range(1f, 10f)]
-    [SerializeField] float dashSpeedBoost = 2f; 
+    [SerializeField] float dashSpeedBoost = 5f; 
     bool invincible = false;
     float dashSpeed;
 
@@ -78,13 +78,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputValue inputValue)
     {
+        if (invincible)
+            return;
         Vector2 inputVector = inputValue.Get<Vector2>();
         dir = new Vector3(inputVector.x, inputVector.y);
     }
     
     public void OnLook(InputValue inputValue)
     {
-        transform.Rotate(Vector3.forward, -inputValue.Get<Vector2>().x * Time.deltaTime * sensitivity);
+        if (!invincible)
+            transform.Rotate(Vector3.forward, -inputValue.Get<Vector2>().x * Time.deltaTime * sensitivity);
     }
 
     public void OnFire()

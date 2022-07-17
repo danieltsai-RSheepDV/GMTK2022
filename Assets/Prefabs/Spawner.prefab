@@ -44,5 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a196f997aa5bd246add9e367d18347f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endEnemy: {fileID: 0}
   enemy: {fileID: 1105627890679600451, guid: f60e10830dac23648bfa4968622b0113, type: 3}
-  difficulty: 4.95
+  difficulty: 1
+  enemyRosters:
+  - {x: 1, y: 0, z: 1, w: 0}
+  - {x: 2, y: 0, z: 0, w: 0}
+  - {x: 0, y: 1, z: 0, w: 0}
+  - {x: 3, y: 0, z: 2, w: 0}
+  - {x: 2, y: 1, z: 2, w: 0}
+  - {x: 0, y: 3, z: 0, w: 0}
+  enemiesLeft: 0
