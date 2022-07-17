@@ -54,11 +54,11 @@ public class Enemy : MonoBehaviour
                 cooldown = 1;
                 break;
             case PlayerType.square:
-                ((GameObject) Instantiate(turret, transform.position, transform.rotation)).SetActive(true);
+                ((GameObject) Instantiate(turret, transform.position, transform.rotation, GameManager.twoD.transform)).SetActive(true);
                 cooldown = 6;
                 break;
             case PlayerType.pentagon:
-                ((GameObject) Instantiate(deflector, transform.position, transform.rotation)).SetActive(true);
+                ((GameObject) Instantiate(deflector, transform.position, transform.rotation, GameManager.twoD.transform)).SetActive(true);
                 cooldown = 1.5f;
                 break;
             case PlayerType.hexagon:
@@ -89,6 +89,7 @@ public class Enemy : MonoBehaviour
         health--;
         if (health <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Enemy Hit");
             GameManager.enemySpawner.DecrementEnemyCounter();
             Destroy(gameObject);
         }
@@ -99,6 +100,7 @@ public class Enemy : MonoBehaviour
         health-=i;
         if (health <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Enemy Hit");
             GameManager.enemySpawner.DecrementEnemyCounter();
             Destroy(gameObject);
         }

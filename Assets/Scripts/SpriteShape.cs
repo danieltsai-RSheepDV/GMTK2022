@@ -33,7 +33,7 @@ public class SpriteShape : MonoBehaviour
         float angleI = (2f * Mathf.PI)/currentShape;
         for (int i = 0; i < currentShape; i++)
         {
-            float angle = angleI * i + offsetAngle;
+            float angle = angleI * (i + offsetAngle);
             Vector3 offset = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0);
             spline.InsertPointAt(i, offset * 5);
         }

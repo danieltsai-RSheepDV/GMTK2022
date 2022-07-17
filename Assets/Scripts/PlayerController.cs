@@ -78,8 +78,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputValue inputValue)
     {
-        if (dashCounter != 0)
-            return;
         Vector2 inputVector = inputValue.Get<Vector2>();
         dir = new Vector3(inputVector.x, inputVector.y);
     }
@@ -99,8 +97,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Sentry Setup");
                 turrets.RemoveAll(item => item == null);
-                GameObject nTurret = Instantiate(turret, transform.position, transform.rotation);
+                GameObject nTurret = Instantiate(turret, transform.position, transform.rotation, GameManager.twoD.transform);
                 nTurret.SetActive(true);
                 turrets.Add(nTurret);
                 if (turrets.Count > 2)
@@ -111,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerType.pentagon:
                 Debug.Log("genji shimada");
-                ((GameObject) Instantiate(deflector, transform.position, transform.rotation)).SetActive(true);
+                ((GameObject) Instantiate(deflector, transform.position, transform.rotation, GameManager.twoD.transform)).SetActive(true);
                 break;
             case PlayerType.hexagon:
                 if (dashCounter == 0)
@@ -161,7 +160,8 @@ public class PlayerController : MonoBehaviour
         else if(e)
         {
             health--;
-            currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
+            if(health % 3 == 0)
+                currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
 
             if (health < 1)
             {

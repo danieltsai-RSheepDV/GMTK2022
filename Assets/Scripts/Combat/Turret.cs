@@ -20,7 +20,7 @@ public class Turret : MonoBehaviour
     {
         targets = GameObject.FindGameObjectsWithTag("Enemy");
         lifetime = 0;
-        cooldown = 0;
+        cooldown = framesBetweenShots;
     }
 
     // Update is called once per frame

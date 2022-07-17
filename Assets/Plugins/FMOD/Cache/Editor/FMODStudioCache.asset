@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637936034249174165
+  lastModified: 637936235900889512
   FileSizes:
   - Name: Desktop
-    Value: 1472576
+    Value: 1548000
   Exists: 1
 --- !u!114 &-7496545782568976044
 MonoBehaviour:
@@ -74,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1985
+--- !u!114 &-5997760429318246815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Hit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Hit
+  Guid:
+    Data1: 839794767
+    Data2: 1270683479
+    Data3: -407595638
+    Data4: 9252651
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1149
 --- !u!114 &-3038947574754576186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,13 +203,44 @@ MonoBehaviour:
   - {fileID: 7433718477273082507}
   - {fileID: -3038947574754576186}
   - {fileID: -7496545782568976044}
+  - {fileID: 406019193081140553}
+  - {fileID: 2347303782822157718}
+  - {fileID: -5997760429318246815}
+  - {fileID: 4329403174349536011}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7705770486707086198}
   StringsBanks:
   - {fileID: 1045178829685490373}
-  cacheTime: 637936034249224124
+  cacheTime: 637936235900909530
   cacheVersion: 131591
+--- !u!114 &406019193081140553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Dice Charge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Dice Charge
+  Guid:
+    Data1: 655010922
+    Data2: 1327830278
+    Data3: 1097001651
+    Data4: 850302079
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1750
 --- !u!114 &674750474976878557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,11 +283,65 @@ MonoBehaviour:
   Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637936034249224124
+  lastModified: 637936235900909530
   FileSizes:
   - Name: Desktop
-    Value: 1170
+    Value: 1352
   Exists: 1
+--- !u!114 &2347303782822157718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Dice Pop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Dice Pop
+  Guid:
+    Data1: -166900278
+    Data2: 1301422279
+    Data3: -212751182
+    Data4: 1612057594
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2063
+--- !u!114 &4329403174349536011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sentry Setup
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sentry Setup
+  Guid:
+    Data1: 154631047
+    Data2: 1299434100
+    Data3: -1561738613
+    Data4: -693832216
+  Banks:
+  - {fileID: -7705770486707086198}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 992
 --- !u!114 &5580141733799490479
 MonoBehaviour:
   m_ObjectHideFlags: 0
