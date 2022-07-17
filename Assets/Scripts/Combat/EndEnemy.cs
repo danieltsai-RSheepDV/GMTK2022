@@ -7,11 +7,12 @@ using Object = UnityEngine.Object;
 public class EndEnemy : MonoBehaviour
 {
     [SerializeField] int health = 5;
+    VFXController vfx;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        vfx = GameObject.Find("VFX Controller").GetComponent<VFXController>();
     }
 
     // Update is called once per frame
@@ -26,8 +27,10 @@ public class EndEnemy : MonoBehaviour
         if (p && p.tags.Contains("Player"))
         {
             health--;
+            vfx.PlayAccumulate(5 - health);
             if (health <= 0)
             {
+                vfx.PlayBurst();
                 GameManager.dieFace.SetActive(false);
                 GameManager.die.launch(col.transform.up, 5f);
                 Destroy(gameObject);
