@@ -38,7 +38,9 @@ public class SpriteShape : MonoBehaviour
             Vector3 offset = new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0);
             spline.InsertPointAt(i, offset * 5);
         }
-        
+
+        transform.up = new Vector2(Mathf.Sin(angleI) * -1f, Mathf.Cos(angleI));
+
         spriteShape.RefreshSpriteShape();
     }
 }
