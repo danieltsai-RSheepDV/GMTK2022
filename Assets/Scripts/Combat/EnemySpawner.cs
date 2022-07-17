@@ -63,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 offset = new Vector3(randx, randy, 0);
 
-        GameObject mob = (GameObject)Instantiate(enemy, transform.position + offset, Quaternion.identity);
+        GameObject mob = Instantiate(enemy, transform.position + offset, Quaternion.identity, GameManager.twoD.transform);
         mob.GetComponent<Enemy>().SetEnemyType(type);
 
         enemiesLeft++;
@@ -74,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
         enemiesLeft--;
         if (enemiesLeft == 0)
         {
-            Instantiate(endEnemy, transform.position, Quaternion.identity);
+            Instantiate(endEnemy, transform.position, Quaternion.identity, GameManager.twoD.transform);
         }
     }
 }

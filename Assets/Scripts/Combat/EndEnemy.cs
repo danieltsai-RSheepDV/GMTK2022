@@ -26,17 +26,15 @@ public class EndEnemy : MonoBehaviour
         Projectile p = col.gameObject.GetComponent<Projectile>();
         if ((p && p.tags.Contains("Player")))
         {
-            try
-            {
-                Destroy(p.gameObject);
-            }
-            catch (Exception e) { }
+            Destroy(p.gameObject);
 
             health--;
             vfx.PlayAccumulate(5 - health);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Charge");
             if (health <= 0)
             {
                 vfx.PlayBurst();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Pop");
                 GameManager.dieFace.SetActive(false);
                 GameManager.die.launch(col.transform.up, 5f);
                 Destroy(gameObject);
@@ -51,9 +49,11 @@ public class EndEnemy : MonoBehaviour
         {
             health--;
             vfx.PlayAccumulate(5 - health);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Charge");
             if (health <= 0)
             {
                 vfx.PlayBurst();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Pop");
                 GameManager.dieFace.SetActive(false);
                 GameManager.die.launch(col.transform.up, 5f);
                 Destroy(gameObject);

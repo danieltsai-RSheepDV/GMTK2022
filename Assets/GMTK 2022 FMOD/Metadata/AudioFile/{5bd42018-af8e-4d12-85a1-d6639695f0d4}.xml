@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5bd42018-af8e-4d12-85a1-d6639695f0d4}">
+		<property name="assetPath">
+			<value>Enemy Hit.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1493877551020408</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7d95a572-b349-4b46-8658-6fdc3d4f2292}</destination>
+		</relationship>
+	</object>
+</objects>

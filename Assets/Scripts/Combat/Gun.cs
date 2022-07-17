@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Triangle Basic Shot");
         Debug.Log("Spawning");
         GameObject shot = ((GameObject) Instantiate(ammo, transform));
-        shot.transform.SetParent(parent);
+        shot.transform.SetParent(GameManager.twoD.transform);
         shot.SetActive(true);
     }
 

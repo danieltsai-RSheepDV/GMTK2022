@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Dice : MonoBehaviour
@@ -113,5 +114,12 @@ public class Dice : MonoBehaviour
     {
         model.SetActive(false);
         particles.SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Enemy Hit");
+    }
+
+    IEnumerator Resett()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Title Screen");
     }
 }

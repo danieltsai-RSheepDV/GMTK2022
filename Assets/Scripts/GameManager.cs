@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         dieFace = DieFace;
         die = Die;
         enemySpawner = EnemySpawner;
+        twoD = TwoD;
         
         instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         instance.start();
@@ -30,9 +31,10 @@ public class GameManager : MonoBehaviour
 
     public static void nextWave(int i)
     {
-        enemySpawner.SpawnWave(i);
+        // enemySpawner.SpawnWave(i);
         dieFace.SetActive(true);
-        instance.setParameterByName("ParameterName", i - 1);
+        instance.setParameterByName("Face", i - 1);
+        twoD.SetActive(true);
     }
 
     // Update is called once per frame
