@@ -378,7 +378,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bolt
       value: 
-      objectReference: {fileID: 6069177322025284160}
+      objectReference: {fileID: 6069177321395457895}
     - target: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
       propertyPath: m_Name
@@ -455,6 +455,12 @@ Transform:
 --- !u!1 &3016286729527158605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346341263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6069177321395457895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6069177322200467176, guid: 91584560acd623e4793edf3f39eeebce,
     type: 3}
   m_PrefabInstance: {fileID: 1346341263}
   m_PrefabAsset: {fileID: 0}
