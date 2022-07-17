@@ -42,4 +42,10 @@ public class Transition : MonoBehaviour
     {
         inTransition = true;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
