@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -328,7 +328,6 @@ Transform:
   m_Children:
   - {fileID: 471318333}
   - {fileID: 727244249}
-  - {fileID: 386142081}
   - {fileID: 1680428708}
   - {fileID: 1542329855}
   - {fileID: 918348997}
@@ -1594,9 +1593,10 @@ Transform:
   m_LocalPosition: {x: 17.5, y: -13.36, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 386142081}
   m_Father: {fileID: 436635200}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1680428709
 MonoBehaviour:
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4.9
-  sensitivity: 1
+  sensitivity: 44
   cam: {fileID: 1499799134}
   centerOfView: {fileID: 614822089}
   localCenter: {fileID: 471318333}
@@ -1619,6 +1619,7 @@ MonoBehaviour:
   orthoCam: {fileID: 471318335}
   gun: {fileID: 386142082}
   bolt: {fileID: 6069177320833446643, guid: cfa3de37f70a8644dbd1dc4708dfd4f0, type: 3}
+  chaser: {fileID: 1291416850617823896, guid: d3d5379b95fad8449a2597c923ecd073, type: 3}
   turret: {fileID: 3016286730867142338, guid: 91584560acd623e4793edf3f39eeebce, type: 3}
   deflector: {fileID: 4716101175098986623, guid: 92cfac2015f28494ca803dcdc303fa08,
     type: 3}
@@ -1745,8 +1746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   face: {fileID: 1189151552}
-  DirectionValues: {x: 0, y: 0, z: 0}
-  rb: {fileID: 0}
 --- !u!54 &1719175290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1797,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 1105627890679600450, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1105627890679600450, guid: f60e10830dac23648bfa4968622b0113,
         type: 3}
@@ -1866,7 +1865,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 436635200}
+    m_TransformParent: {fileID: 1680428708}
     m_Modifications:
     - target: {fileID: 1661735079753357124, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
@@ -1881,22 +1880,22 @@ PrefabInstance:
     - target: {fileID: 1661735079753357127, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1661735079753357127, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.06
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1661735079753357127, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.359985
+      value: 0.000014305115
       objectReference: {fileID: 0}
     - target: {fileID: 1661735079753357127, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1661735079753357127, guid: 0770bb3edd048854599cc47792f9b997,
         type: 3}
@@ -1960,7 +1959,7 @@ PrefabInstance:
     - target: {fileID: 3016286730867142339, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3016286730867142339, guid: 91584560acd623e4793edf3f39eeebce,
         type: 3}
@@ -2024,7 +2023,7 @@ PrefabInstance:
     - target: {fileID: 4716101175098986622, guid: 92cfac2015f28494ca803dcdc303fa08,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4716101175098986622, guid: 92cfac2015f28494ca803dcdc303fa08,
         type: 3}
@@ -2098,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: 6269467270105735698, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6269467270105735698, guid: 650e1234310cb1942a73fc527e6c6369,
         type: 3}

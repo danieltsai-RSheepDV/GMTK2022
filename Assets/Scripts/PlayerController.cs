@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [Header("Weapons")]
     [SerializeField] Gun gun;
     [SerializeField] Object bolt;
+    [SerializeField] Object chaser;
     [SerializeField] Object turret;
     [SerializeField] Object deflector;
 
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         dashSpeed = moveSpeed * dashSpeedBoost;
         health = maxHealth;
     }
@@ -111,6 +112,7 @@ public class PlayerController : MonoBehaviour
             case PlayerType.triangle:
                 Debug.Log("attempting p3");
                 gun.Shoot(bolt);
+                gun.Shoot(chaser);
                 break;
             case PlayerType.square:
                 Debug.Log("im bad help turret");
