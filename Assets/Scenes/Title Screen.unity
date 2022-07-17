@@ -625,6 +625,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 135039257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &135039259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6269467270105735699, guid: 650e1234310cb1942a73fc527e6c6369,
+    type: 3}
+  m_PrefabInstance: {fileID: 135039257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a196f997aa5bd246add9e367d18347f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271143946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1358,8 @@ GameObject:
   - component: {fileID: 658998707}
   - component: {fileID: 658998710}
   - component: {fileID: 658998711}
+  - component: {fileID: 658998712}
+  - component: {fileID: 658998713}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1561,6 +1575,43 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 3df6948170043654c9380672c7dd904c, type: 2}
+--- !u!114 &658998712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658998706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b33d6690e91b64184bee4bf23dc8f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DieFace: {fileID: 2099236073}
+  Die: {fileID: 1892815106}
+  EnemySpawner: {fileID: 135039259}
+  TwoD: {fileID: 1692487604}
+  fmodEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &658998713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658998706}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc2802ba73270244a8b0c98f9c6667a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1892815102}
+  offset: {x: 0, y: 7.53, z: -1.67}
 --- !u!1 &722618969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2206,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1004930322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004930324}
+  - component: {fileID: 1004930323}
+  m_Layer: 0
+  m_Name: Transition Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1004930323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004930322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b133b7bcaf8054ca912d93dd035676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: {fileID: 1892815102}
+  mainCamera: {fileID: 658998706}
+  offset: {x: 0, y: 7.53, z: -1.67}
+  title: {fileID: 1007994749}
+  button: {fileID: 1771148871}
+--- !u!4 &1004930324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004930322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 483.8, y: 101.2, z: 65.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007994745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2266,7 @@ GameObject:
   - component: {fileID: 1007994746}
   - component: {fileID: 1007994748}
   - component: {fileID: 1007994747}
+  - component: {fileID: 1007994749}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2291,6 +2392,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007994745}
   m_CullTransparentMesh: 1
+--- !u!95 &1007994749
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007994745}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec5a04985a2b5314084ee6c1433b8fff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1077334098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,7 +2968,7 @@ MonoBehaviour:
   dashDuration: 120
   dashSpeedBoost: 2
   currentType: 2
-  maxHealth: 5
+  maxHealth: 100
 --- !u!50 &1212888136
 Rigidbody2D:
   serializedVersion: 4
@@ -3854,8 +3975,9 @@ GameObject:
   - component: {fileID: 1771148868}
   - component: {fileID: 1771148870}
   - component: {fileID: 1771148869}
+  - component: {fileID: 1771148871}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text (TMP) button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3979,6 +4101,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771148867}
   m_CullTransparentMesh: 1
+--- !u!95 &1771148871
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771148867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a43e88c71a6ab345a16aa05ff0e1251, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1777704784
 GameObject:
   m_ObjectHideFlags: 0
@@ -9144,6 +9286,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1892815106}
         m_TargetAssemblyTypeName: Dice, Assembly-CSharp
         m_MethodName: launch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004930323}
+        m_TargetAssemblyTypeName: Transition, Assembly-CSharp
+        m_MethodName: StartTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
