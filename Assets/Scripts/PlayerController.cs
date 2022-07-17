@@ -12,13 +12,6 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 100f)]
     [SerializeField] private float sensitivity = 60f;
 
-    [Header("Mouse Tracking")]
-    [SerializeField] Camera cam;
-    [SerializeField] Transform centerOfView;
-    [SerializeField] Transform localCenter;
-    [SerializeField] MeshRenderer quad;
-    [SerializeField] Camera orthoCam;
-
     [Header("Weapons")]
     [SerializeField] Gun gun;
     [SerializeField] GameObject bolt;
@@ -53,7 +46,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         dashSpeed = moveSpeed * dashSpeedBoost;
         health = maxHealth;
     }
