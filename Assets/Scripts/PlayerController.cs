@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
         else if((p && p.tags.Contains("Enemy")))
         {
             health--;
-            currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
+            if(health % 3 == 0)
+                currentType = (PlayerType) Mathf.RoundToInt(Random.Range(0f, 3f));
 
             if (health < 1)
             {

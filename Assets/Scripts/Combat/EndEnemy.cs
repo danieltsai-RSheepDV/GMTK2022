@@ -35,7 +35,7 @@ public class EndEnemy : MonoBehaviour
             {
                 vfx.PlayBurst();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Pop");
-                GameManager.dieFace.SetActive(false);
+                GameManager.dieFace.GetComponent<MeshRenderer>().enabled = false;
                 GameManager.die.launch(col.transform.up, 5f);
                 Destroy(gameObject);
             }
@@ -54,7 +54,7 @@ public class EndEnemy : MonoBehaviour
             {
                 vfx.PlayBurst();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dice Pop");
-                GameManager.dieFace.SetActive(false);
+                GameManager.dieFace.GetComponent<MeshRenderer>().enabled = false;
                 GameManager.die.launch(col.transform.up, 5f);
                 Destroy(gameObject);
             }

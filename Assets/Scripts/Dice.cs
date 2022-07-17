@@ -59,7 +59,7 @@ public class Dice : MonoBehaviour
                 lastVelocity = rb.velocity;
                 if (acceleration.magnitude < 0.05f)
                 {
-                    inAir = false;
+                    falling = false;
                     GameManager.tutorial();
                 }
             }
@@ -130,11 +130,14 @@ public class Dice : MonoBehaviour
         model.SetActive(false);
         particles.SetActive(true);
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Enemy Hit");
+        GameManager.twoD.SetActive(false);
+        StartCoroutine(Resett());
     }
 
     IEnumerator Resett()
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Title Screen");
+        Cursor.lockState = CursorLockMode.None;
     }
 }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
     public static void nextWave(int i)
     {
         enemySpawner.SpawnWave(i);
-        dieFace.SetActive(true);
+        dieFace.GetComponent<MeshRenderer>().enabled = true;
         instance.setParameterByName("Face", i - 1);
         twoD.SetActive(true);
     }
@@ -42,6 +44,12 @@ public class GameManager : MonoBehaviour
         dieFace.SetActive(true);
         instance.setParameterByName("Face", 0);
         twoD.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        instance.stop(STOP_MODE.IMMEDIATE);
+        instance.release();
     }
 
     // Update is called once per frame

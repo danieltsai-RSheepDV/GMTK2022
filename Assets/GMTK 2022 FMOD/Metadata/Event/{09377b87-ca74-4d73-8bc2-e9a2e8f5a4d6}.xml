@@ -5,7 +5,7 @@
 			<value>Sentry Setup</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6a714113-8579-44ca-b218-0c0479988216}</destination>
@@ -113,7 +113,6 @@
 	<object class="MixerBusEffectChain" id="{3421fca7-8c40-49e4-ba3c-43c31b38c24f}">
 		<relationship name="effects">
 			<destination>{f2440acb-6e7d-421a-9665-95bd16711380}</destination>
-			<destination>{1a3862a6-d979-4143-9b9b-65cc335e3445}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{73fa6add-a5ba-48e4-bbdc-dded75023d8e}" />
@@ -125,6 +124,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{74dd48a3-e4c9-4d2d-bd52-b571f5962d58}" />
 	<object class="MixerBusFader" id="{f2440acb-6e7d-421a-9665-95bd16711380}" />
-	<object class="SpatialiserEffect" id="{1a3862a6-d979-4143-9b9b-65cc335e3445}" />
 	<object class="MixerBusFader" id="{ad0d5811-a599-4349-ae86-a7b67b2a3e3d}" />
 </objects>

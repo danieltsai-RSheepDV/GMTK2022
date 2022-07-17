@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637936235900889512
+  lastModified: 637936287171428339
   FileSizes:
   - Name: Desktop
-    Value: 1548000
+    Value: 1547168
   Exists: 1
 --- !u!114 &-7496545782568976044
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7705770486707086198}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -212,7 +212,7 @@ MonoBehaviour:
   - {fileID: -7705770486707086198}
   StringsBanks:
   - {fileID: 1045178829685490373}
-  cacheTime: 637936235900909530
+  cacheTime: 637936287171448337
   cacheVersion: 131591
 --- !u!114 &406019193081140553
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7705770486707086198}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -283,7 +283,7 @@ MonoBehaviour:
   Path: Assets/GMTK 2022 FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637936235900909530
+  lastModified: 637936287171448337
   FileSizes:
   - Name: Desktop
     Value: 1352
@@ -336,7 +336,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7705770486707086198}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
